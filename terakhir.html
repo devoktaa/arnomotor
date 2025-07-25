@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bengkel Mobil Boyolali</title>
+  <meta name="description" content="Bengkel mobil terpercaya untuk spooring, shockbreaker, tune up, dan lainnya. Lokasi strategis dan layanan profesional." />
+  <meta name="keywords" content="Bengkel Mobil, Spooring, Tune Up, Shockbreaker, Servis Mobil" />
+  <meta name="author" content="Arno Motor" />
+
+  <!-- Gaya CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #970a0a, #0a0202);
+      color: #fff;
+      line-height: 1.6;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(153, 0, 0, 0.9);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1605559424843-256d92b6e6b6?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-text {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    .hero-text h1 {
+      color: #ffcc00;
+      font-size: 2.5rem;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #ffcc00;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      color: #000;
+    }
+    .btn-submit {
+      background: #ffcc00;
+      color: #000;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background-color: rgba(153, 0, 0, 0.9);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  </style>
+
+  <!-- Script Form Booking -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nama = document.getElementById("nama").value.trim();
+        const nohp = document.getElementById("nohp").value.trim();
+        const layanan = document.getElementById("layanan").value.trim();
+
+        if (!nama || !nohp || !layanan) {
+          alert("Mohon isi semua data terlebih dahulu.");
+          return;
+        }
+
+        const pesan = `Halo, saya ingin booking servis:%0ANama: ${nama}%0ANo. HP: ${nohp}%0ALayanan: ${layanan}`;
+        const url = `https://wa.me/6285797377835?text=${pesan}`;
+        window.open(url, "_blank");
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Navigasi -->
+  <header class="navbar">
+    <div class="logo">Bengkel Mobil</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Selamat Datang di Bengkel Arno Motor</h1>
+      <p>Layanan profesional untuk kendaraan Anda</p>
+    </div>
+  </section>
+
+  <!-- Layanan -->
+  <section id="layanan">
+    <h2>Layanan Kami</h2>
+    <ul>
+      <li>Spooring dan Balancing</li>
+      <li>Shockbreaker & Servis</li>
+      <li>Tune Up & Ganti Oli</li>
+      <li>Servis Berkala & Pemeriksaan</li>
+      <li>Perbaikan Rem & Kemudi</li>
+    </ul>
+  </section>
+
+  <!-- Tentang -->
+  <section id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>Kami adalah bengkel mobil terpercaya di Boyolali dengan teknisi berpengalaman dan layanan cepat serta lokasi strategis.</p>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking">
+    <h2>Form Booking Servis</h2>
+    <form>
+      <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required />
+      </div>
+      <div class="form-group">
+        <label for="nohp">No. HP:</label>
+        <input type="tel" id="nohp" name="nohp" required />
+      </div>
+      <div class="form-group">
+        <label for="layanan">Jenis Layanan:</label>
+        <input type="text" id="layanan" name="layanan" list="opsi-layanan" required />
+        <datalist id="opsi-layanan">
+          <option value="Spooring">
+          <option value="Filter Oli">
+          <option value="Tune Up">
+          <option value="Ganti Oli">
+          <option value="Servis Rem">
+        </datalist>
+      </div>
+      <button type="submit" class="btn-submit">Kirim Booking</button>
+    </form>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <p>Alamat: Jl. Tentara Pelajar, Kiringan, Boyolali, Jawa Tengah 57314</p>
+    <p>Jam Operasional: Senin - Minggu, 08.00 - 17.30 WIB</p>
+    <p><a href="https://maps.app.goo.gl/3SqZWHezgMDuaWJQ8" target="_blank" style="color: #ffcc00;">Lihat Lokasi di Google Maps</a></p>
+    <p><a href="https://wa.me/6285797377835" target="_blank" style="color: #ffcc00;">Hubungi via WhatsApp</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Arno Motor. All rights reserved.</p>
+  </footer>
+</body>
+</html>
